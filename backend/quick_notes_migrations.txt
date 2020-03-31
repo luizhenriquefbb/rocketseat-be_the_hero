@@ -1,0 +1,10 @@
+Migrations: like a git of database
+
+(Changes you made in database)
+
+# how to:
+- npx knex migrate:make create_ngos
+    - create a Migrations
+
+- npx knex migrate:latest
+    - execute migration
