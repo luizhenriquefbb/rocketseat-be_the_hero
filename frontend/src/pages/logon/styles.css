@@ -1,0 +1,78 @@
+.logon-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logon-container > * {
+  width: 50%;
+}
+
+.logon-container section.form {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto;
+}
+
+.logon-container section.form form {
+  margin-top: 100px;
+}
+
+.logon-container section.form form h1 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.logon-container section.form form a{
+    display: flex;
+    align-items: center;
+    color: #41414d;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.logon-container section.form form a.go-to-login{
+    margin-top: 40px;
+}
+
+.logon-container section.form form a:hover{
+   opacity: 0.8;
+}
+
+a svg{
+    margin-right: 8px;
+}
+
+.logon-container .bg-img {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.button.help {
+  background: #37c167;
+}
+
+@media only screen and (max-width: 718px){
+  .logon-container {
+    display: block;
+  }
+
+  .logon-container section.form {
+    margin-top: 31px;
+  }
+
+  .logon-container section.form form {
+    margin-top: 10px;
+  }
+
+}
