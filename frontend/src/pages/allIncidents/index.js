@@ -1,6 +1,6 @@
 import React, { useState, useEffect, } from 'react';
 import { Link, } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 import api from '../../services/api';
 import logoImg from '../../assets/logo.svg';
@@ -12,13 +12,28 @@ export default function AllIncidents() {
     const [incidents, setIncidents] = useState([]);
     const [total, setTotal] = useState(0);
 
+    const [currentPage, setCurrentPage] = useState(1);
+
     // get data to show on view
     useEffect(() => {
-        api.get('incidents').then((response) => {
+        api.get(`incidents?page=${currentPage}`).then((response) => {
             setIncidents(response.data.incidents);
             setTotal(response.data.totalOfIncidents);
         });
-    }, []);
+    }, [currentPage]);
+
+    function changePage(type) {
+        if (type === "next") {
+            // TODO validate
+            setCurrentPage(currentPage + 1);
+        }
+        else {
+            if (currentPage === 0) {
+                return;
+            }
+            setCurrentPage(currentPage - 1);
+        }
+    }
 
 
     return (
@@ -44,6 +59,15 @@ export default function AllIncidents() {
             <CommonIncidents
                 incidents={incidents}
             />
+
+            <footer className='pagination'>
+                <button onClick={() => changePage("back")}>
+                    <FiArrowLeft size={32} />
+                </button>
+                <button onClick={() => changePage("next")}>
+                    <FiArrowRight size={32} />
+                </button>
+            </footer>
         </div>
     );
 }

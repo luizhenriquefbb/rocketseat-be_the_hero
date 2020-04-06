@@ -39,6 +39,15 @@ ul.list-of-incidents li p {
   font-size: 16px;
 }
 
+ul.list-of-incidents li .card-details {
+  color: #e02041;
+  margin-top: 17px;
+  border-top: 1px #a69494 solid;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 700px) {
     ul.list-of-incidents {
         grid-template-columns: repeat(1, 1fr);

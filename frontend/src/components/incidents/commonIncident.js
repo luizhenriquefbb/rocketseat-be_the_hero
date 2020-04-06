@@ -1,6 +1,8 @@
 import React from 'react';
+import { FiArrowRight } from "react-icons/fi";
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 /**
  * Show incidents without delete option
@@ -22,6 +24,13 @@ export default function CommonIncidents(props) {
 
                         <strong>VALOR:</strong>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', }).format(incident.value)}</p>
+
+                        <Link to="/card_details">
+                            <div className="card-details">
+                                <span>Ver mais detalhes</span>
+                                <FiArrowRight size={16}/>
+                            </div>
+                        </Link>
 
                     </li>
                 ))}

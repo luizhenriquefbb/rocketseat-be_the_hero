@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "betherehro-back",
+            "cwd": "./backend/",
+            "script": "yarn execute"
+        },
+        {
+            "name": "betherehro-frontend",
+            "cwd": "./frontend/",
+            "script": "yarn start"
+        }
+    ]
+}

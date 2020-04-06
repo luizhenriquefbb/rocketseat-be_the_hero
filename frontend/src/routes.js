@@ -6,6 +6,7 @@ import Register from './pages/register/index';
 import Profile from './pages/profile/index';
 import NewIncident from './pages/newIncident/index';
 import AllIncidents from './pages/allIncidents/index';
+import CardDetails from './pages/cardDetails/index';
 
 export default function Routes() {
     return (
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/incidents/new" exact component={NewIncident} />
                 <Route path="/guest" exact component={AllIncidents} />
+                <Route path="/card_details" exact component={CardDetails} />
             </Switch>
         </BrowserRouter>
     );
