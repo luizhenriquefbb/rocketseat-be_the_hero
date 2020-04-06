@@ -1,0 +1,46 @@
+.card {
+	background: #FFF;
+	padding: 24px;
+	border-radius: 8px;
+	position: relative;
+	width: 81%;
+	max-width: 640px;
+	margin: 40px auto;
+}
+
+.card + .card {
+}
+
+.card button:hover {
+  opacity: 0.8;
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 16px;
+  color: #41414d;
+}
+
+.card p + strong {
+  margin-top: 32px;
+}
+
+.card p {
+  color: #737380;
+  line-height: 21px;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.card h1{
+    margin-bottom: 10px;
+}
+
+.card .card-details {
+  color: #e02041;
+  margin-top: 17px;
+  border-top: 1px #a69494 solid;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+}

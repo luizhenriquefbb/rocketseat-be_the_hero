@@ -20,7 +20,9 @@ export default function AdminIncidents(props) {
                         <p>{incident.title}</p>
 
                         <strong>DESCRIÇÃO:</strong>
-                        <p>{incident.description}</p>
+                        {incident.description.split("\n").map(p => {
+                            return <p>{p}</p>
+                        })}
 
                         <strong>VALOR:</strong>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', }).format(incident.value)}</p>

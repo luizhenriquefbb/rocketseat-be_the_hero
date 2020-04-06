@@ -20,12 +20,14 @@ export default function CommonIncidents(props) {
                         <p>{incident.title}</p>
 
                         <strong>DESCRIÇÃO:</strong>
-                        <p>{incident.description}</p>
+                        {incident.description.split("\n").map(p => {
+                            return <p>{p}</p>
+                        })}
 
                         <strong>VALOR:</strong>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', }).format(incident.value)}</p>
 
-                        <Link to="/card_details">
+                        <Link to={`/card_details/${incident.id}`}>
                             <div className="card-details">
                                 <span>Ver mais detalhes</span>
                                 <FiArrowRight size={16}/>

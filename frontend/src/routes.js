@@ -17,7 +17,7 @@ export default function Routes() {
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/incidents/new" exact component={NewIncident} />
                 <Route path="/guest" exact component={AllIncidents} />
-                <Route path="/card_details" exact component={CardDetails} />
+                <Route path="/card_details/:incident_id" exact component={CardDetails} />
             </Switch>
         </BrowserRouter>
     );

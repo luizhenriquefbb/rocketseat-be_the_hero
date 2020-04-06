@@ -69,4 +69,30 @@ module.exports = {
         return res.json({ msg: 'successfully removed', });
     },
 
+    index: async (req, res) => {
+        const { incidentId } = req.params;
+
+        const incidents = await connection('incidents')
+            .join('ngos', 'ngos.id', '=', 'incidents.ngo_id')
+            .limit(1)
+            .select([
+                'incidents.title',
+                'incidents.description',
+                'incidents.value',
+
+                'ngos.name',
+                'ngos.email',
+                'ngos.whatsapp',
+                'ngos.city',
+                'ngos.uf'
+            ])
+            .where('incidents.id', incidentId);
+
+        const incident = incidents[0];
+
+        return res.json({
+            incident,
+        });
+    },
+
 };

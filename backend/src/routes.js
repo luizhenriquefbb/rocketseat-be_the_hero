@@ -34,6 +34,9 @@ routes.post('/incident', IncidentController.store);
 // list all incidents
 routes.get('/incidents', IncidentController.list);
 
+// list incident by id
+routes.get('/incident/:incidentId', IncidentController.index);
+
 // delete an incident
 routes.delete('/incident/:incidentId', IncidentController.delete);
 
