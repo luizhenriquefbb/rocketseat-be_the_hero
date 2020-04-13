@@ -2,7 +2,7 @@
 
 This component is the frontend.
 
-It was made in React and uses handful libraries like:
+It was made in React
 
 # screen shots
 
