@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import api from '../../services/api';
 
+import strings from '../../strings';
+
 export default function CardDetails(props) {
 
     // get card id from url (react router dom)
@@ -21,24 +23,24 @@ export default function CardDetails(props) {
             {selectedCard &&
                 <>
                     <div className="card">
-                        <strong>CASO:</strong>
+                        <strong>{strings.case}</strong>
                         <p>{selectedCard.title}</p>
 
-                        <strong>DESCRIÇÃO:</strong>
+                        <strong>{strings.description}</strong>
                         {selectedCard.description.split("\n").map(p => {
                             return <p>{p}</p>
                         })}
 
 
-                        <strong>VALOR:</strong>
+                        <strong>{strings.value}</strong>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', }).format(selectedCard.value)}</p>
                     </div>
 
                     <div className="card">
-                        <h1>Salve o dia !!</h1>
-                        <h1>Seja o herói desse caso.</h1>
+                        <h1>{strings.saveTheDay}</h1>
+                        <h1>{strings.saveTheDay2}</h1>
 
-                        <span className='gray'>Entre em contato</span>
+                        <span className='gray'>{strings.getInTouch}</span>
 
                         <div>
                             <button className='button'>WhatsApp: {selectedCard.whatsapp}</button>

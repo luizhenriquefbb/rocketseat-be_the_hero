@@ -6,6 +6,7 @@ import api from '../../services/api';
 import logoImg from '../../assets/logo.svg';
 
 import './styles.css';
+import strings from '../../strings';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -44,21 +45,18 @@ export default function Register() {
                 <section>
                     <img src={logoImg} alt="Be The Hero"/>
 
-                    <h1>Cadastro</h1>
-                    <p>
-                        Faça seu cadastro, entre na plataforma e ajude pessoas a
-                        encontrarem os casos da sua ONG.
-                    </p>
+                    <h1>{strings.haveNoCredential}</h1>
+                    <p> {strings.subtitle3} </p>
 
                     <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
-                            Voltar para a home
+                            {strings.backToHome}
                     </Link>
                 </section>
 
                 <form onSubmit={handleRegister}>
                     <input
-                        placeholder="Nome da ONG"
+                        placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
@@ -78,7 +76,7 @@ export default function Register() {
 
                     <div className="input-group">
                         <input
-                            placeholder="Cidade"
+                            placeholder="city"
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                         />
@@ -91,7 +89,7 @@ export default function Register() {
                         />
                     </div>
 
-                    <button className="button" type="submit">Cadastrar</button>
+                    <button className="button" type="submit">{strings.submit}</button>
                 </form>
             </div>
         </div>

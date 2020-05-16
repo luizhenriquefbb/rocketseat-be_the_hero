@@ -8,6 +8,8 @@ import AdminIncidents from '../../components/incidents/adminIncident';
 
 import './styles.css';
 
+import strings from "../../strings";
+
 export default function Profile() {
     const [incidents, setIncidents] = useState([]);
 
@@ -36,7 +38,7 @@ export default function Profile() {
 
             setIncidents(incidents.filter((incident) => incident.id !== id));
         } catch (err) {
-            alert('Erro ao deletar caso, tente novamente.');
+            alert(strings.failDelete);
         }
     }
 
@@ -51,15 +53,15 @@ export default function Profile() {
             <header>
                 <img src={logoImg} alt="Be the Hero" />
 
-                <span>Bem vinda, {ngoName}</span>
+                <span>{strings.welcome}, {ngoName}</span>
 
-                <Link className="button" to="/incidents/new">Cadastrar novo caso</Link>
+                <Link className="button" to="/incidents/new">{strings.newCaseBtn}</Link>
                 <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="#E02041" />
                 </button>
             </header>
 
-            <h1>Casos cadastrados</h1>
+            <h1>{strings.incidents}</h1>
 
             <AdminIncidents
                 incidents={incidents}

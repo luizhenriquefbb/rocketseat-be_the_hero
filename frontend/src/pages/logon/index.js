@@ -9,6 +9,8 @@ import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
 import api from '../../services/api'
 
+import strings from '../../strings';
+
 
 export default function Logon() {
     const [id, setId] = useState('');
@@ -25,7 +27,7 @@ export default function Logon() {
 
             history.push('/profile');
         } catch (err) {
-            alert('Falha no login, tente novamente.');
+            alert(strings.failLogin);
         }
     }
 
@@ -38,18 +40,18 @@ export default function Logon() {
                 <img src={logoImg} alt="be the hero"/>
 
                 <form onSubmit={handleLogin}>
-                    <h1>Faça seu logon</h1>
+                    <h1>{strings.welcome}</h1>
 
-                    <input type="text" placeholder="Sua ID" onChange={(evt) => setId(evt.target.value)}/>
+                    <input type="text" placeholder={strings.idPlaceholder} onChange={(evt) => setId(evt.target.value)}/>
 
-                    <button className="button" type="submit">Entrar</button>
+                    <button className="button" type="submit">{strings.loginBtn}</button>
                     <Link to="guest">
-                        <button className="button help" type="button">Quero ajudar</button>
+                        <button className="button help" type="button">{strings.wantHelpBtn}</button>
                     </Link>
 
                     <Link to="/register" className="go-to-login">
                         <FiLogIn size={16} color="#e02041"/>
-                        Não tenho cadastro
+                        {strings.haveNoCredential}
                     </Link>
                 </form>
             </section>

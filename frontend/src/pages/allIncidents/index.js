@@ -8,6 +8,8 @@ import CommonIncidents from '../../components/incidents/commonIncident';
 
 import './styles.css';
 
+import strings from '../../strings';
+
 export default function AllIncidents() {
     const [incidents, setIncidents] = useState([]);
     const [total, setTotal] = useState(0);
@@ -41,19 +43,19 @@ export default function AllIncidents() {
             <header>
                 <img src={logoImg} alt="Be the Hero" />
 
-                <span className="gray">Total de incidents: {total}</span>
+                <span className="gray">{strings.incidents} {total}</span>
 
                 <Link className="back-link" to="/">
                     <FiArrowLeft size={16} color="#E02041" />
-                        Voltar para home
+                        {strings.backToHome}
                 </Link>
 
             </header>
 
-            <h1>Bem vindo</h1>
+            <h1>{strings.welcome}</h1>
 
             <p className="well-come gray">
-                Escolha um dos casos abaixo e ajude a salvar o dia
+                {strings.subtitle}
             </p>
 
             <CommonIncidents

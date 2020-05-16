@@ -3,6 +3,8 @@ import { FiTrash2 } from 'react-icons/fi';
 
 import './styles.css';
 
+import strings from '../../strings';
+
 /**
  * Show cards with option to delete a card
  *
@@ -16,15 +18,15 @@ export default function AdminIncidents(props) {
             <ul className='list-of-incidents'>
                 {incidents.map((incident) => (
                     <li key={incident.id}>
-                        <strong>CASO:</strong>
+                        <strong>{strings.case}</strong>
                         <p>{incident.title}</p>
 
-                        <strong>DESCRIÇÃO:</strong>
+                        <strong>{strings.description}</strong>
                         {incident.description.split("\n").map(p => {
                             return <p>{p}</p>
                         })}
 
-                        <strong>VALOR:</strong>
+                        <strong>{strings.value}</strong>
                         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', }).format(incident.value)}</p>
 
                         <button onClick={() => handleDeleteIncident(incident.id)} type="button">

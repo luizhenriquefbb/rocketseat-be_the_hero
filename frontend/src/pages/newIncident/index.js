@@ -7,6 +7,8 @@ import logoImg from '../../assets/logo.svg';
 
 import './styles.css';
 
+import strings from '../../strings';
+
 
 export default function NewIncident() {
     const [title, setTitle] = useState('');
@@ -35,7 +37,7 @@ export default function NewIncident() {
 
             history.push('/profile');
         } catch (err) {
-            alert('Erro ao cadastrar caso, tente novamente.');
+            alert(strings.failNewCase);
         }
     }
 
@@ -45,35 +47,35 @@ export default function NewIncident() {
                 <section>
                     <img src={logoImg} alt="Be The Hero" />
 
-                    <h1>Cadastrar novo caso</h1>
-                    <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso.</p>
+                    <h1>{strings.newCase}</h1>
+                    <p>{strings.subtitle2}</p>
 
                     <Link className="back-link" to="/profile">
                         <FiArrowLeft size={16} color="#E02041" />
-                            Voltar para home
+                            {strings.backToHome}
                     </Link>
                 </section>
 
                 <form onSubmit={handleNewIncident}>
                     <input
-                        placeholder="Título do caso"
+                        placeholder={strings.titlePlaceHolder}
                         value={title}
                         onChange={e => setTitle(e.target.value)}
                     />
 
                     <textarea
-                        placeholder="Descrição"
+                        placeholder={strings.description}
                         value={description}
                         onChange={e => setDescription(e.target.value)}
                     />
 
                     <input
-                        placeholder="Valor em reais"
+                        placeholder={strings.value}
                         value={value}
                         onChange={e => setValue(e.target.value)}
                     />
 
-                    <button className="button" type="submit">Cadastrar</button>
+                    <button className="button" type="submit">{strings.submit}</button>
                 </form>
             </div>
         </div>
